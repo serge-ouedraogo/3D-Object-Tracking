@@ -152,8 +152,8 @@ int main(int argc, const char *argv[])
 
       // extract 2D keypoints from current image
       vector<cv::KeyPoint> keypoints; // create empty feature list for current image
-      string detectorType = "AKAZE";
-      //string detectorType = "HARRIS";
+      //string detectorType = "AKAZE";
+      string detectorType = "HARRIS";
       //string detectorType = "ORB";
         
         if (detectorType.compare("SHITOMASI") == 0)
@@ -213,7 +213,7 @@ int main(int argc, const char *argv[])
         /* EXTRACT KEYPOINT DESCRIPTORS */
 
         cv::Mat descriptors;
-        string descriptorType = "AKAZE"; // BRISK, BRIEF, ORB, FREAK, AKAZE, SIFT
+        string descriptorType = "SIFT"; // BRISK, BRIEF, ORB, FREAK, AKAZE, SIFT
         descKeypoints((dataBuffer.end() - 1)->keypoints, (dataBuffer.end() - 1)->cameraImg, descriptors, descriptorType);
 
         // push descriptors for current frame to end of data buffer
