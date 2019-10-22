@@ -59,14 +59,13 @@ To do so, we first locate uniquely identifiable keypoints that and tracked them 
 
 Example 1 and example 2 show the lidar TTC well below the camera TTC. A closed inspection of the lidar points show the presence of outliers despite the fact that an Euclidean clustering algorithm was implemented to address this specific issue. 
 
-<img src="/home/workspace/SFND_3D_Object_Tracking/images/outlier_1.png"
-     alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px;" />
-     
- <img src="/home/workspace/SFND_3D_Object_Tracking/images/outlier_2.png"
-     alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px;" />
-     
+<img src="/home/workspace/SFND_3D_Object_Tracking/images/outlier_1.png" />
+
+![](home/workspace/SFND_3D_Object_Tracking/images/outlier_1.png)
+
+ <img src="/home/workspace/SFND_3D_Object_Tracking/images/outlier_2.png" />
+![](/home/workspace/SFND_3D_Object_Tracking/images/outlier_2.png)
+
 Example 3 show the lidar TTC well above the camera TTC. This might be due to the fact that the road might not be flat. For example if the car is on a bump, the distance to the nearest point will be larger compare to a case where the car is moving a flat surface.   
 
 ## FP.6 Performance Evaluation 2
