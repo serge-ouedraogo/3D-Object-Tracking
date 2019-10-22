@@ -33,13 +33,16 @@ In this final project, you will implement the missing parts in the schematic. To
 4. Run it: `./3D_object_tracking`.
 
 1. Implement the method "matchBoundingBoxes", which takes as input both the previous and the current data frames and provides as output the ids of the matched regions of interest
+
 MatchboudingBoxes is a function that takes as input a pair of matched keypoints, as well as keypoints from the previous and current frames. In this function, the first step in matching the previous bounding box to a current boundingbox is to first establish a match between keypoints from the current frame and keypoints from the previous frame, and for those keypoints we were able to pair up we constrain them into bounding boxes with known ID. We then iterate through the matches and tally up the the ID pair and return only the most frequent one, which is the pair with the highest count.          
 
 2. Compute the time-to-collision for all matched 3D objects using only Lidar measurements from the matched bounding boxes between current and previous frame.
+
 To compute the TTC with LiDAR points only, we iterated through all the lidar cloud points and identify the lidar point closest to our vehicle. Then assuming a constant speed model the TTC was computed using the equation provided. 
 However, outliers lidar points that for example reflected off the road surface and appear closest could be selected as valid data point and that thus lead to an erroneous TTC measurement. To deal with outliers, we first stored all lidar points into a KD_tree data structure, and then cluster them based on their euclidean distance. Clusters with large distance were labeled as outliers and were removed from the tree. This part of the code can be found on LidarClustering function.  
 
 3. Prepare the TTC computation based on camera measurements by associating keypoint correspondences to the bounding boxes which enclose them. All matches which satisfy this condition must be added to a vector in the respective bounding box.
+
 The function clusterKptMatchesWithROI associates each bounding box with the keypoints it contains. This is done by iterating through all the matched keypoints, and for keypoint that was found in our established region of interest of the current bounding box, the matched pair is saved and to be used in the  calculation the camera based TTC.
 
 4. Compute the time-to-collision for all matched 3D objects using only keypoint correspondences from the matched bounding boxes between current and previous frame.
