@@ -74,8 +74,8 @@ Example 3 show the lidar TTC well above the camera TTC. This might be due to the
 | Harris        | 17.54 |  12.50   | 15.697  | 12.30   | 19.62  |  N/A   |
 | ORB           | 12.56 |  21.61   | 317.201 | 15.72   | 18.02  |  N/A   |
 | BRISK         | 15.59 |  14.89   | 14.04   | 13.85   | 14.48  |  N/A   |
-| SIFT          | 12.51 | 11.89    | 12.26   | out of memory     | 11.87  |  --   |
-| FAST          | 13.17 | 12.52    | 14.72   | 11.85   | 13.70  |  --   |
+| SIFT          | 12.51 | 11.89    | 12.26   | out of memory     | 11.87  |  N/A   |
+| FAST          | 13.17 | 12.52    | 14.72   | 11.85   | 13.70  |  N/A   |
 | AKAZE         | 12.48 | 12.51    | 12.43   | 12.36   | 12.22  | 12.43 |
 
 FAST + ORB provides the shortest TTC
